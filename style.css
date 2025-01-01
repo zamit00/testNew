@@ -56,10 +56,10 @@ border-bottom: 1px solid rgba(0,0,0,0.1);border-left: 1px solid rgba(0,0,0,0.1);
 .ser h3{width:100vw;margin-bottom:10px;padding:0;justify-content:right;padding-right:35vw;margin-right:0px;}
 .dropdown-content, .dropdown-content li, .dropdown-content a{width:100vw;
 	box-sizing:border-box;}
-
+.ser{padding:0;margin:0;box-sizing:border-box;display: none; }
 .dropdown-content li{border: 1px solid rgba(0,0,0,0.2);}	
 .dropdown-content a{padding-right:35vw;font-size:1rem;}
-.ser{display: none;}
+
 .tafrit{display: block;margin-bottom: 20px;margin-right:40px;}
 .change .bar1 {transform: translate(0, 11px) rotate(-45deg);background-color: rgb(89, 227, 89);}
 .change .bar2 {opacity: 0;}

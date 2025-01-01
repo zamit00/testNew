@@ -16,8 +16,13 @@
 		</div>	       
     </div>
 	<div class="allmenu">
-		<div  class="ser">
-			<h3>מידע מקצועי </h3>    
+		<div class="tafrit" id="tafrit" onclick="chng(this)">
+            <div class="bar1 bar"></div>
+            <div class="bar2 bar"></div>
+            <div class="bar3 bar"></div>
+        </div> 
+		<div  class="ser" id="ser">
+			<h3  onclick="taf(this)">מידע מקצועי </h3>    
 			<ul class="dropdown-content" id='drp1'>
 				<li><a href="#" class="kh" onclick="hisht('hishtalmotMikzoei.html')">קרנות השתלמות</a></li>
 				<li><a href="#" onclick="hisht('hashkaaMikzoei.html')">קופות גמל להשקעה</a></li>
@@ -26,7 +31,7 @@
 			</ul>
 		</div>
 		<div class="ser">
-                <h3>מחשבונים </h3>
+                <h3  onclick="taf(this)">מחשבונים </h3>
  				<ul class="dropdown-content" id='drp2' >
 					<li><a href="#" onclick="hisht('ribitderibit.html')">מחשבון ריבית דריבית</a></li>
 					<li><a href="#" onclick="hisht('madad.html')">מחשבון הצמדה למדד</a></li>
@@ -35,7 +40,7 @@
 				</ul>
 		</div>
 		<div  class="ser">
-                <h3>נתוני קופות גמל</h3>
+                <h3  onclick="taf(this)">נתוני קופות גמל</h3>
                 
 				<ul class="dropdown-content" id='drp3' >
 					<li><a href="#" onclick="hisht('https://zamit00.github.io/netuneytesua/index.html')" >  השוואת תשואות ונכסים  </a></li>
@@ -45,7 +50,7 @@
 				</ul>
 		</div>
 		<div  class="ser">
-                <h3>השירותים שלנו</h3>
+                <h3  onclick="taf(this)">השירותים שלנו</h3>
                 
 				<ul class="dropdown-content" id='drp3' >
 					<li><a href="#" >  ייעוץ פנסיוני  </a></li>

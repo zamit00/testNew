@@ -54,7 +54,7 @@ border-bottom: 1px solid rgba(0,0,0,0.1);border-left: 1px solid rgba(0,0,0,0.1);
 .kot{display:flex;flex-direction:column; align-items:center;}
 .allmenu{display:block;margin-top:10px;width:100vw;}	
 .ser h3{width:100vw;margin-bottom:10px;padding:0;margin-right:2.5vw;justify-content:right;padding-right:35vw;}
-.dropdown-content, .dropdown-content li, .dropdown-content a{width:100vw;overflow:hidden;
+.dropdown-content, .dropdown-content li, .dropdown-content a{width:100vw;
 	box-sizing:border-box;}
 
 .dropdown-content li{border: 1px solid rgba(0,0,0,0.2);}	

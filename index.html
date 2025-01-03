@@ -3,19 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>האתר שלי</title>
-    <link rel="stylesheet" href="style.css">
+    <title>כסף צומח</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    
+	<link rel="stylesheet" href="style.css">
+
 </head>
-<body>
-    <!-- כותרת ראשית -->
-     <div class="kot">
+<header class="header">
+	<div class="kotdiv">
 		<img src="logo.png" class="logo"> 
-		<div class="kotdiv">	 	  
-			<h1>כסף צומח</h1>
-			<h2>קופות גמל וקרנות השתלמות</h2>
-		</div>	       
-    </div>
+		<h1 class="kesef">כסף צומח</h1>	
+	</div>
+	<h2 class="kupot" style="color: rgb(89, 237, 89);">גמל והשתלמות</h2>
+</header>
+
+<nav>
 	<div class="allmenu">
+		<div class="tafrit" id="tafrit" onclick="chng(this)">
+			<div class="bar1 bar"></div>
+			<div class="bar2 bar"></div>
+			<div class="bar3 bar"></div>
+		</div> 
+		<div  class="ser" id="ser">
+			<h3  onclick="taf(this)">מידע מקצועי </h3>    
+			<ul class="dropdown-content" id='drp1'>
+				<li><a href="#" class="kh" onclick="hisht('hishtalmotMikzoei.html')">קרנות השתלמות</a></li>
+				<li><a href="#" onclick="hisht('hashkaaMikzoei.html')">קופות גמל להשקעה</a></li>
+				<li><a href="#" onclick="hisht('kupatgemelmikzoei.html')">קופות גמל לקצבה</a></li>
+				<li><a href="#"onclick="hisht('hisyeled.html')">קופות גמל חסכון לילד</a></li>
+			</ul>
+		</div>
+		<div class="ser">
+				<h3  onclick="taf(this)">מחשבונים </h3>
+				<ul class="dropdown-content" id='drp2' >
+					<li><a href="#" onclick="hisht('ribitderibit.html')">מחשבון ריבית דריבית</a></li>
+					<li><a href="#" onclick="hisht('madad.html')">מחשבון הצמדה למדד</a></li>
+					<li><a href="#" onclick="hisht('loan.html')"> סימולטור הלוואות</a></li>
+					<li><a href="#">מחשבונים אחרים</a></li>
+				</ul>
+		</div>
+		<div  class="ser">
+				<h3  onclick="taf(this)">נתוני קופות גמל</h3>
+				
+				<ul class="dropdown-content" id='drp3' >
+					<li><a href="#" onclick="hisht('https://zamit00.github.io/netuneytesua/index.html')" >  השוואת תשואות ונכסים  </a></li>
+					<li><a href="#"  >מדד השירות</a></li>
+					<li><a href="#">מדד הפנדינג</a></li>
+					<li><a href="#">  נתוני השוואה אחרים </a></li>
+				</ul>
+		</div>
+		<div  class="ser">
+				<h3  onclick="taf(this)">השירותים שלנו</h3>
+				<ul class="dropdown-content" id='drp3' >
+					<li><a href="#" >  ייעוץ פנסיוני  </a></li>
+					<li><a href="#"  >ייעוץ פרישה</a></li>
+					<li><a href="#">ייעול תהליכי תפעול</a></li>
+					<li><a href="#">  </a></li>
+				</ul>
+		</div>
+	</div>
+</nav>	
+<body>
+	<pre>
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+		www
+
+	</pre>	
+	<script src="scr.js"></script>
+</body>
+</html>
+	<!-- 
+	<nav class="tafrit">
 		<div class="tafrit" id="tafrit" onclick="chng(this)">
             <div class="bar1 bar"></div>
             <div class="bar2 bar"></div>
@@ -51,18 +152,26 @@
 		</div>
 		<div  class="ser">
                 <h3  onclick="taf(this)">השירותים שלנו</h3>
-                
-				<ul class="dropdown-content" id='drp3' >
+                <ul class="dropdown-content" id='drp3' >
 					<li><a href="#" >  ייעוץ פנסיוני  </a></li>
 					<li><a href="#"  >ייעוץ פרישה</a></li>
 					<li><a href="#">ייעול תהליכי תפעול</a></li>
 					<li><a href="#">  </a></li>
 				</ul>
 		</div>
+	</nav>	 
+    
+     <div class="kot">
+		
+			 	  
+		      
+    </div>
+	<div class="allmenu">
+	
 	</div>	
 	
-		<!--
-		<div class="allmenu">
+	
+		
 		
 			
 			
@@ -70,7 +179,7 @@
 	
 		
     </section>
-	<!--
+
 	
 	
     
@@ -95,6 +204,4 @@
    -->
     
 
-    <script src="scr.js"></script>
-</body>
-</html>
+

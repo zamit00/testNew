@@ -139,5 +139,5 @@ nav .ser:hover{
 .change .bar1 {transform: translate(0, 11px) rotate(-45deg);background-color: rgb(89, 227, 89);}
 .change .bar2 {opacity: 0;}
 .change .bar3 { transform: translate(0, -11px) rotate(45deg);background-color: rgb(89, 227, 89);}
- 
+ #ser{margin-top:5px;}
 }

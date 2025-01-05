@@ -119,11 +119,13 @@ nav .ser:hover{
  
 @media only screen and (max-width: 768px){
   .tafrit{display: block;}
-  .ser{display: none;}
-  .sera{display: block;}
+  .ser{display: none;margin-left:0px}
+  .sera{display: block;margin-left:0px;}
   .allmenu{	display:block;}
 .header h2 {width:100vw;padding:0; margin:120px 0px 0px 0px;line-height: 50px;}
-.ser h3,.ser ul, .ser li, .ser a{width:100vw; text-align:right;box-sizing:border-box;}
+.allmenu,.ser h3,.ser ul, .ser li, .ser a{width:100vw; text-align:right;box-sizing:border-box;}
+
+.ser li,.ser h3 {border-bottom:1px solid rgba(0,0,0,0.1);}
 .ser h3,.ser li{padding-right:35vw;}
 
  .header h2 {margin: 0;font-size: clamp(2rem, 3.5vw, 3rem);

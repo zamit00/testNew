@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חישוב סכום למשיכה</title>
+    <link rel="stylesheet" href="halstyle.css">
+</head>
+<body dir="rtl">
+
+    <div style="width: 60%; margin: auto;">
+        <h1>חישוב סכום למשיכה</h1>
+        <form id="loanForm">
+            <label for="loanAmount">סכום הלוואה קיים</label>
+            <input type="text" id="loanAmount" placeholder="הקלד סכום הלוואה" required><br><br>
+
+            <label for="illiquidBalance">יתרה לא נזילה</label>
+            <input type="text" id="illiquidBalance" placeholder="הקלד יתרה לא נזילה" required><br><br>
+
+            <label for="liquidBalanceStock">יתרה נזילה מנייתית</label>
+            <input type="text" id="liquidBalanceStock" placeholder="הקלד יתרה נזילה מנייתית" required><br><br>
+
+            <label for="liquidBalanceNonStock">יתרה נזילה לא מנייתית</label>
+            <input type="text" id="liquidBalanceNonStock" placeholder="הקלד יתרה נזילה לא מנייתית" required><br><br>
+
+            <label for="requiredWithdrawalAmount">סכום משיכה נדרש</label>
+            <input type="text" id="requiredWithdrawalAmount" placeholder="הקלד סכום משיכה נדרש" required><br><br>
+
+            <button type="submit">שלח</button>
+        </form>
+
+        <div style="width: 50%; margin-left: 20px; margin-top: 30px;">
+            <h2>תוצאה:</h2>
+            <table border="1" style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <th style="text-align: right; padding: 10px;">תוצאה</th>
+                    <th style="text-align: right; padding: 10px;">ערך</th>
+                </tr>
+                <tr>
+                    <td style="text-align: right; padding: 10px;">סכום מקסימום לתשלום</td>
+                    <td id="maxPaymentAmountResult" style="text-align: right; padding: 10px;"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; padding: 10px;">סכום למשיכה ללא פרעון הלוואות</td>
+                    <td id="withdrawalAmountResult" style="text-align: right; padding: 10px;"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; padding: 10px;">סכום למשיכה נטו למבוטח</td>
+                    <td id="withdrawalneto" style="text-align: right; padding: 10px;"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; padding: 10px;">סכום למשיכה בפועל</td>
+                    <td id="schomLeMeshihaBafoal" style="text-align: right; padding: 10px;"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; padding: 10px;">סכום למשיכה מנייתי</td>
+                    <td id="nimshachMenayati" style="text-align: right; padding: 10px;"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; padding: 10px;">סכום למשיכה לא מנייתי</td>
+                    <td id="nimshachLoMenayati" style="text-align: right; padding: 10px;"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; padding: 10px;">סכום לפרעון ההלוואה</td>
+                    <td id="schomLePeron" style="text-align: right; padding: 10px;"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="halscript.js"></script>
+</body>
+</html>

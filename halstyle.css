@@ -9,7 +9,7 @@ body {
 }
 
 h1 {
-    color: #2d2d2d;
+    color: green ;
     font-size: 24px;
 }
 
@@ -93,6 +93,7 @@ margin-left: 10vw;}
     h1 {
     color: green ;
     font-size: 20px;
+        width:100%;
     }
 td{min-width: 30vw;}
 table {width: 80vw;margin-left: 10vw;}

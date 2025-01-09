@@ -110,7 +110,7 @@ if (requestedAmount < amountForWithdrawalNoLoanRepayment) {
 }
 schomlemeshich=nimshachMenayati+nimshachLoMenayati;
 console.log(schomLeMeshihaBafoal+":"+nimshachMenayati+":"+nimshachLoMenayati+":"+schomLePeron);
-document.getElementById("schomLeMeshihaBafoal").textContent = .toLocaleString("he-IL"); 
+document.getElementById("schomLeMeshihaBafoal").textContent = schomlemeshich.toLocaleString("he-IL");
 document.getElementById("nimshachMenayati").textContent = nimshachMenayati.toLocaleString("he-IL");
 document.getElementById("nimshachLoMenayati").textContent = nimshachLoMenayati.toLocaleString("he-IL");
 document.getElementById("schomLePeron").textContent = schomLePeron.toLocaleString("he-IL");

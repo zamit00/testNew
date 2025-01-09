@@ -94,6 +94,7 @@ h1 {
     color: green ;
     font-size: 18px;
         width:80vw;
+    text-align:center;
     }
 td{min-width: 30vw;}
 table {width: 80vw;margin-left: 10vw;}

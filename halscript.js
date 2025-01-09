@@ -1,5 +1,7 @@
 // halscript.js
-
+const shiurNazilM=0.60;
+const shiurNazilLm=0.75;
+const shiurLoNazil=0.30;
 function calculateWithdrawalAmount() {
     // קריאה לערכים מהקלט של המשתמש
     const yitratHalvaa = parseFloat(document.getElementById("loanAmount").value.replace(/[^0-9.]/g, ""));
@@ -9,13 +11,13 @@ function calculateWithdrawalAmount() {
     const requestedAmount = parseFloat(document.getElementById("requiredWithdrawalAmount").value.replace(/[^0-9.]/g, "")); // סכום נדרש למשיכה
 
     // חישוב maxLeHalvaa
-    const maxLeHalvaa = (yitratLoNazil * 0.30) + (yitraNazilMenayot * 0.60) + (yitraNazilLOMenayot * 0.75);
+    const maxLeHalvaa = (yitratLoNazil * shiurLoNazil) + (yitraNazilMenayot * shiurNazilM) + (yitraNazilLOMenayot * shiurNazilLm);
 
     // חישוב sumHalvaotLoNazil
-    const sumHalvaotLoNazil = yitratLoNazil * 0.30;
+    const sumHalvaotLoNazil = yitratLoNazil * shiurLoNazil;
 
     // חישוב yitraHalvaaNazilLOMenayot
-    const yitraHalvaaNazilLOMenayot = yitraNazilLOMenayot * 0.75;
+    const yitraHalvaaNazilLOMenayot = yitraNazilLOMenayot * shiurNazilLm;
 
     // חישוב yitraLeMeshichaMax (המקסימום למשיכה מתוך החישובים הקודמים)
     const yitraLeMeshichaMax = sumHalvaotLoNazil - yitratHalvaa+yitraNazilLOMenayot+yitraNazilMenayot;
@@ -31,9 +33,9 @@ function calculateWithdrawalAmount() {
     } else if (sumHalvaotLoNazil > yitratHalvaa) {
         amountForWithdrawalNoLoanRepayment = yitraLeMeshichaMax;
     } else if (yitraHalvaaNazilLOMenayot >= (yitratHalvaa - sumHalvaotLoNazil)) {
-        amountForWithdrawalNoLoanRepayment = yitraNazilLOMenayot - (yitratHalvaa - sumHalvaotLoNazil) / 0.75 + yitraNazilMenayot;
+        amountForWithdrawalNoLoanRepayment = yitraNazilLOMenayot - (yitratHalvaa - sumHalvaotLoNazil) / shiurNazilLm + yitraNazilMenayot;
     } else if (yitraHalvaaNazilLOMenayot < (yitratHalvaa - sumHalvaotLoNazil)) {
-        amountForWithdrawalNoLoanRepayment = yitraNazilMenayot - (yitratHalvaa - sumHalvaotLoNazil - yitraHalvaaNazilLOMenayot) / 0.60;
+        amountForWithdrawalNoLoanRepayment = yitraNazilMenayot - (yitratHalvaa - sumHalvaotLoNazil - yitraHalvaaNazilLOMenayot) / shiurNazilM;
     }
 
     // הצגת סכום למשיכה ללא פרעון הלוואות
@@ -69,42 +71,42 @@ if (requestedAmount < amountForWithdrawalNoLoanRepayment) {
 
 } else {
     if (yitratHalvaa > maxLeHalvaa) {
-        if ((yitraNazilMenayot - (yitratHalvaa - maxLeHalvaa) / (1 - 0.6)) * (1 - 0.6) >= requestedAmount) {
-            nimshachMenayati = yitratHalvaa - maxLeHalvaa + (requestedAmount) / (1 - 0.6);
+        if ((yitraNazilMenayot - (yitratHalvaa - maxLeHalvaa) / (1 - shiurNazilM)) * (1 - shiurNazilM) >= requestedAmount) {
+            nimshachMenayati = yitratHalvaa - maxLeHalvaa + (requestedAmount) / (1 - shiurNazilM);
             nimshachLoMenayati = 0;
-            schomLePeron = (requestedAmount + yitratHalvaa - maxLeHalvaa) / (1 - 0.6) * 0.6;
-        } else if (yitraNazilMenayot * (1 - 0.6) > yitratHalvaa - maxLeHalvaa) {
+            schomLePeron = (requestedAmount + yitratHalvaa - maxLeHalvaa) / (1 - shiurNazilM) * shiurNazilM;
+        } else if (yitraNazilMenayot * (1 - shiurNazilM) > yitratHalvaa - maxLeHalvaa) {
             nimshachMenayati = yitraNazilMenayot;
-            nimshachLoMenayati = (requestedAmount - (yitraNazilMenayot - (yitratHalvaa - maxLeHalvaa) / (1 - 0.6)) * (1 - 0.6)) / (1 - 0.75);
+            nimshachLoMenayati = (requestedAmount - (yitraNazilMenayot - (yitratHalvaa - maxLeHalvaa) / (1 - shiurNazilM)) * (1 - shiurNazilM)) / (1 - shiurNazilLm);
             schomLePeron = nimshachMenayati + nimshachLoMenayati - requestedAmount;
-        } else if (yitraNazilMenayot * (1 - 0.6) < yitratHalvaa - maxLeHalvaa) {
+        } else if (yitraNazilMenayot * (1 - shiurNazilM) < yitratHalvaa - maxLeHalvaa) {
             nimshachMenayati = yitraNazilMenayot;
-            nimshachLoMenayati = (requestedAmount + (yitratHalvaa - maxLeHalvaa) - yitraNazilMenayot * (1 - 0.6)) / (1 - 0.75);
-            schomLePeron = yitraNazilMenayot * 0.6 + (requestedAmount + (yitratHalvaa - maxLeHalvaa) - yitraNazilMenayot * (1 - 0.6)) / (1 - 0.75) * 0.75;
+            nimshachLoMenayati = (requestedAmount + (yitratHalvaa - maxLeHalvaa) - yitraNazilMenayot * (1 - shiurNazilM)) / (1 - shiurNazilLm);
+            schomLePeron = yitraNazilMenayot * shiurNazilM + (requestedAmount + (yitratHalvaa - maxLeHalvaa) - yitraNazilMenayot * (1 - shiurNazilM)) / (1 - shiurNazilLm) * shiurNazilLm;
         }
     } else if (yitratHalvaa <= maxLeHalvaa && amountForWithdrawalNoLoanRepayment == 0) {
-        if (yitraNazilMenayot * (1 - 0.6) >= requestedAmount) {
-            nimshachMenayati = requestedAmount / (1 - 0.6);
+        if (yitraNazilMenayot * (1 - shiurNazilM) >= requestedAmount) {
+            nimshachMenayati = requestedAmount / (1 - shiurNazilM);
             nimshachLoMenayati = 0;
-            schomLePeron = requestedAmount / (1 - 0.6) * 0.6;
-        } else if (yitraNazilMenayot * (1 - 0.6) < requestedAmount) {
+            schomLePeron = requestedAmount / (1 - shiurNazilM) * shiurNazilM;
+        } else if (yitraNazilMenayot * (1 - shiurNazilM) < requestedAmount) {
             nimshachMenayati = yitraNazilMenayot;
-            nimshachLoMenayati = (requestedAmount - yitraNazilMenayot * (1 - 0.6)) / (1 - 0.75);
-            schomLePeron = yitraNazilMenayot * 0.6 + (requestedAmount - yitraNazilMenayot * (1 - 0.6)) / (1 - 0.75) * 0.75;
+            nimshachLoMenayati = (requestedAmount - yitraNazilMenayot * (1 - shiurNazilM)) / (1 - shiurNazilLm);
+            schomLePeron = yitraNazilMenayot * shiurNazilM + (requestedAmount - yitraNazilMenayot * (1 - shiurNazilM)) / (1 - shiurNazilLm) * shiurNazilLm;
         }
     } else if (yitratHalvaa <= maxLeHalvaa && amountForWithdrawalNoLoanRepayment > 0) {
         if (yitraNazilMenayot < amountForWithdrawalNoLoanRepayment) {
             nimshachMenayati = yitraNazilMenayot;
-            nimshachLoMenayati = amountForWithdrawalNoLoanRepayment - yitraNazilMenayot + (requestedAmount - amountForWithdrawalNoLoanRepayment) / (1 - 0.75);
-            schomLePeron = (requestedAmount - amountForWithdrawalNoLoanRepayment) / (1 - 0.75) * 0.75;
-        } else if ((yitraNazilMenayot - amountForWithdrawalNoLoanRepayment) * (1 - 0.6) + amountForWithdrawalNoLoanRepayment >= requestedAmount) {
+            nimshachLoMenayati = amountForWithdrawalNoLoanRepayment - yitraNazilMenayot + (requestedAmount - amountForWithdrawalNoLoanRepayment) / (1 - shiurNazilLm);
+            schomLePeron = (requestedAmount - amountForWithdrawalNoLoanRepayment) / (1 - shiurNazilLm) * shiurNazilLm;
+        } else if ((yitraNazilMenayot - amountForWithdrawalNoLoanRepayment) * (1 - shiurNazilM) + amountForWithdrawalNoLoanRepayment >= requestedAmount) {
             nimshachLoMenayati = 0;
-            nimshachMenayati = amountForWithdrawalNoLoanRepayment + (requestedAmount - amountForWithdrawalNoLoanRepayment) / (1 - 0.6);
-            schomLePeron = (requestedAmount - amountForWithdrawalNoLoanRepayment) / (1 - 0.6) * 0.6;
-        } else if ((yitraNazilMenayot - amountForWithdrawalNoLoanRepayment) * (1 - 0.6) + amountForWithdrawalNoLoanRepayment < requestedAmount) {
+            nimshachMenayati = amountForWithdrawalNoLoanRepayment + (requestedAmount - amountForWithdrawalNoLoanRepayment) / (1 - shiurNazilM);
+            schomLePeron = (requestedAmount - amountForWithdrawalNoLoanRepayment) / (1 - shiurNazilM) * shiurNazilM;
+        } else if ((yitraNazilMenayot - amountForWithdrawalNoLoanRepayment) * (1 - shiurNazilM) + amountForWithdrawalNoLoanRepayment < requestedAmount) {
             nimshachMenayati = yitraNazilMenayot;
-            nimshachLoMenayati = (requestedAmount - amountForWithdrawalNoLoanRepayment - (yitraNazilMenayot - amountForWithdrawalNoLoanRepayment) * (1 - 0.6)) / (1 - 0.75);
-            schomLePeron = (yitraNazilMenayot - amountForWithdrawalNoLoanRepayment) * 0.6 + nimshachLoMenayati * 0.75;
+            nimshachLoMenayati = (requestedAmount - amountForWithdrawalNoLoanRepayment - (yitraNazilMenayot - amountForWithdrawalNoLoanRepayment) * (1 - 0.6)) / (1 - shiurNazilLm);
+            schomLePeron = (yitraNazilMenayot - amountForWithdrawalNoLoanRepayment) * shiurNazilM + nimshachLoMenayati * shiurNazilLm;
         }
     }
 }

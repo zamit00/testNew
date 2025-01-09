@@ -90,6 +90,10 @@ margin-left: 10vw;}
     text-align: center;
     color: blue;
 }
+    h1 {
+    color: green ;
+    font-size: 20px;
+    }
 td{min-width: 30vw;}
 table {width: 80vw;margin-left: 10vw;}
     

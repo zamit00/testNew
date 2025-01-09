@@ -116,9 +116,7 @@ document.getElementById("schomLeMeshihaBafoal").textContent = schomlemeshich.toL
 document.getElementById("nimshachMenayati").textContent = nimshachMenayati.toLocaleString("he-IL");
 document.getElementById("nimshachLoMenayati").textContent = nimshachLoMenayati.toLocaleString("he-IL");
 document.getElementById("schomLePeron").textContent = schomLePeron.toLocaleString("he-IL");
-
-
-
+document.getElementById("tozaa").scrollIntoView({ behavior: "smooth" });
 }
 
 document.addEventListener("DOMContentLoaded", function() {

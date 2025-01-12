@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if(yitratHalvaa==='' || yitratLoNazil==='' || yitraNazilLOMenayot===''|| yitraNazilMenayot===''|| requestedAmount===''){
        alert('נדרש למלא נתונים - שדה ריק למלא ב 0');return;
         }   
-        event.preventDefault(); // מונע שליחה של הטופס (ללא חישוב)
+        /*event.preventDefault();*/ // מונע שליחה של הטופס (ללא חישוב)
         calculateWithdrawalAmount(); // חישוב סכום למשיכה ללא פרעון הלוואות
     };
 

@@ -24,7 +24,6 @@ h1 {
     width: 100%;
     margin: 10px auto;
     padding: 20px;
-    border: 1px solid #ccc;
     background: #f9f9f9;
 }
 input{
@@ -60,16 +59,25 @@ button{
 .tdtoz{
     width: 20vw;
 }
-
+.lbl{color: blue;
+    font-size: 16px;
+    text-align: center;
+    box-sizing: border-box;
+}
 @media screen and (max-width: 600px) {
     #loanForm {
-        width: 100vw;
-        margin:10px 0px;
-        box-sizing: border-box;
-        padding:10px;
+        width: 80vw;
     }
     .tdtoz{
         width: 20vw;
+    }
+    input,.lbl{
+        width: 80%;
+        margin: 0;
+        padding: 5px 0px;
+        display: flex;
+        justify-content: center;
+        float: none;
     }
     
 }

@@ -3,13 +3,16 @@ const shiurNazilM=0.60;
 const shiurNazilLm=0.75;
 const shiurLoNazil=0.30;
 function calculateWithdrawalAmount() {
+    
     // קריאה לערכים מהקלט של המשתמש
     const yitratHalvaa = parseFloat(document.getElementById("loanAmount").value.replace(/[^0-9.]/g, ""));
     const yitratLoNazil = parseFloat(document.getElementById("illiquidBalance").value.replace(/[^0-9.]/g, ""));
     const yitraNazilLOMenayot = parseFloat(document.getElementById("liquidBalanceNonStock").value.replace(/[^0-9.]/g, ""));
     const yitraNazilMenayot = parseFloat(document.getElementById("liquidBalanceStock").value.replace(/[^0-9.]/g, ""));
     const requestedAmount = parseFloat(document.getElementById("requiredWithdrawalAmount").value.replace(/[^0-9.]/g, "")); // סכום נדרש למשיכה
-
+    if(yitratHalvaa==='' || yitratLoNazil==='' || yitraNazilLOMenayot===''|| yitraNazilMenayot===''|| requestedAmount===''){
+       alert('נדרש למלא נתונים - שדה ריק למלא ב 0');return;
+        } 
     // חישוב maxLeHalvaa
     const maxLeHalvaa = (yitratLoNazil * shiurLoNazil) + (yitraNazilMenayot * shiurNazilM) + (yitraNazilLOMenayot * shiurNazilLm);
 
@@ -119,26 +122,8 @@ document.getElementById("schomLePeron").textContent = schomLePeron.toLocaleStrin
 document.getElementById("tozaa").scrollIntoView({ behavior: "smooth" });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("loanForm");
-    
-    // הוספת מאזין לאירוע שליחת הטופס
-    function calc() {
-        const yitratHalvaa = document.getElementById("loanAmount").value;
-        const yitratLoNazil = parseFloat(document.getElementById("illiquidBalance").value;
-        const yitraNazilLOMenayot = parseFloat(document.getElementById("liquidBalanceNonStock").value;
-        const yitraNazilMenayot = parseFloat(document.getElementById("liquidBalanceStock").value;
-        const requestedAmount = parseFloat(document.getElementById("requiredWithdrawalAmount").value;
-        if(yitratHalvaa==='' || yitratLoNazil==='' || yitraNazilLOMenayot===''|| yitraNazilMenayot===''|| requestedAmount===''){
-       alert('נדרש למלא נתונים - שדה ריק למלא ב 0');return;
-        }   
-        /*event.preventDefault();*/ // מונע שליחה של הטופס (ללא חישוב)
-        calculateWithdrawalAmount(); // חישוב סכום למשיכה ללא פרעון הלוואות
-    };
-
-
-    function change(){
-     document.getElementById("maxPaymentAmountResult").textContent ="";
+function change(){
+    document.getElementById("maxPaymentAmountResult").textContent ="";
     document.getElementById("withdrawalAmountResult").textContent ="";
     document.getElementById("withdrawalneto").textContent = "";
     document.getElementById("schomLeMeshihaBafoal").textContent = "";
@@ -146,6 +131,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("nimshachLoMenayati").textContent = "";
     document.getElementById("schomLePeron").textContent = "";
         
-    }
+}
     
-});
+

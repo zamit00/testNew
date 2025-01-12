@@ -16,10 +16,12 @@ body {
     overflow: hidden;
 }
 h1 {
-    color: green ;
+    color: blue ;
     font-size: 24px;
-    text-align:center;
+    text-align: right;padding-right: 10vw;width: 100%;
 }
+#netunim{text-align: right;padding-right: 10vw;width: 100%;
+margin-bottom: 0;}
 #loanForm{
     width: 100%;
     margin: 10px auto;
@@ -64,6 +66,11 @@ button{
     text-align: center;
     box-sizing: border-box;
 }
+.form-group{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
 @media screen and (max-width: 600px) {
     #loanForm {
         width: 80vw;
@@ -79,5 +86,28 @@ button{
         justify-content: center;
         float: none;
     }
+    input{
+        margin-bottom: 10px;
+    }
+    .lbl,.kotkot{
+        background-color: darkblue;
+        color: white;
+    }
+    #tozaa,#netunim{
+        color: green;
+        font-size: 18px;
+    }
+    h1{
+        font-size: 20px;
+        width: 100vw;
+        padding: 0%;
+        margin: 0%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        overflow-x: visible;
+       
+    }
+
     
 }

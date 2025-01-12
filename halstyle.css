@@ -63,7 +63,10 @@ button{
 
 @media screen and (max-width: 600px) {
     #loanForm {
-        width: 80vw;
+        width: 100vw;
+        margin:10px 0px;
+        box-sizing: border-box;
+        padding:10px;
     }
     .tdtoz{
         width: 20vw;

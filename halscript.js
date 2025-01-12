@@ -3,21 +3,18 @@ const shiurNazilM=0.60;
 const shiurNazilLm=0.75;
 const shiurLoNazil=0.30;
 function calculateWithdrawalAmount() {
-    const yitratHalvaa1 = document.getElementById("loanAmount").value;
-    const yitratLoNazil1 = document.getElementById("illiquidBalance").value;
-    const yitraNazilLOMenayot1 =document.getElementById("liquidBalanceNonStock").value;
-    const yitraNazilMenayot1 = document.getElementById("liquidBalanceStock").value;
-    const requestedAmount1 = document.getElementById("requiredWithdrawalAmount").value; // סכום נדרש למשיכה
-    if(yitratHalvaa==='' || yitratLoNazil==='' || yitraNazilLOMenayot===''|| yitraNazilMenayot===''|| requestedAmount===''){
+    
+    
+    // קריאה לערכים מהקלט של המשתמש
+    const yitratHalvaa = parseFloat(document.getElementById("loanAmount").value.replace(/[^0-9.]/g, ""));
+    const yitratLoNazil = parseFloat(document.getElementById("illiquidBalance").value.replace(/[^0-9.]/g, ""));
+    const yitraNazilLOMenayot = parseFloat(document.getElementById("liquidBalanceNonStock").value.replace(/[^0-9.]/g, ""));
+    const yitraNazilMenayot = parseFloat(document.getElementById("liquidBalanceStock").value.replace(/[^0-9.]/g, ""));
+    const requestedAmount = parseFloat(document.getElementById("requiredWithdrawalAmount").value.replace(/[^0-9.]/g, "")); 
+
+    if(!yitratHalvaa || !yitratLoNazil|| !yitraNazilLOMenayot|| !yitraNazilMenayot|| !requestedAmount){
        alert('נדרש למלא נתונים - שדה ריק למלא ב 0');return;
         } 
-    // קריאה לערכים מהקלט של המשתמש
-    const yitratHalvaa = parseFloat(yitratHalvaa1.replace(/[^0-9.]/g, ""));
-    const yitratLoNazil = parseFloat(yitratLoNazil1.replace(/[^0-9.]/g, ""));
-    const yitraNazilLOMenayot = parseFloat(yitraNazilLOMenayot1.replace(/[^0-9.]/g, ""));
-    const yitraNazilMenayot = parseFloat(yitraNazilMenayot1.replace(/[^0-9.]/g, ""));
-    const requestedAmount = parseFloat(requestedAmount1.replace(/[^0-9.]/g, "")); 
-    
     // חישוב maxLeHalvaa
     const maxLeHalvaa = (yitratLoNazil * shiurLoNazil) + (yitraNazilMenayot * shiurNazilM) + (yitraNazilLOMenayot * shiurNazilLm);
 

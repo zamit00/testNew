@@ -7,108 +7,66 @@ body {
     padding: 20px;
     text-align: right;
 }
-
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
 h1 {
     color: green ;
     font-size: 24px;
     text-align:center;
 }
-
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-    width: 30vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-input[type="text"] {
+#loanForm{
     width: 100%;
-    padding: 10px;
+    margin: 10px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+}
+input{
+    float: left;
+    margin-left: 15vw;
     margin-bottom: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     text-align: center;
+    box-sizing: border-box;
+}
+button{
     
-}
-.buttons{
-    display: flex;
-    justify-content: space-around;
-}
-.submitdata {
-    padding: 12px 20px;
-    background-color: #4CAF50;
     color: white;
+    margin: 10px;
     font-size: 16px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.submitdata{
+    background-color: green;
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
-.clearall {
-    padding: 12px 20px;
+.clearall{
     background-color: orange;
-    color: white;
-    font-size: 16px;
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-  
+}
+.tdtoz{
+    width: 20vw;
 }
 
-
-table {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 100%;
-    margin-top: 20px;
-    width: 30vw;
-}
-tr{max-width: 30vw;}
-th {
-    padding: 12px;
-    text-align: right;
-    width: 15vw;
-}
-td {
-    text-align: center;width: 15vw;}
-
-th {
-    background-color: #f2f2f2;
-}
-.lbl{
-    color: blue;
-    text-align: center;
-    font-weight: bold;
-    width: 100%;
-}
-@media only screen and (max-width: 800px){
- body{display: flex;flex-direction: column;align-items: center;}   
- form{display: flex;flex-direction: column;align-items: center;width: 80vw;
-margin-left: 10vw;} 
- input[type="text"] {
-    width: 100%;
-    text-align: center;
-     margin-bottom: 5px;
-}   
-.lbl{
-    width: 100%;
-    padding: 0px;
-    font-size: 16px;
-    text-align: center;
-    color: blue;
-}
-h1 {
-    color: green ;
-    font-size: 18px;
-        width:80vw;
-    text-align:center;
+@media screen and (max-width: 600px) {
+    #loanForm {
+        width: 80vw;
     }
-td{min-width: 30vw;}
-table {width: 80vw;margin-left: 10vw;}
+    .tdtoz{
+        width: 20vw;
+    }
     
 }

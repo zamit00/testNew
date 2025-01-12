@@ -9,31 +9,32 @@
 <body dir="rtl">
 
     <div class="container">
-        <h1> חישוב סכום למשיכה בקיזוז הלוואה</h1>
+        <h1> משיכה בקיזוז הלוואה</h1>
+        <h2 id="netunim" >נתונים:</h2>
         <form id="loanForm">
             <div class="form-group">
                 <label  class="lbl" for="loanAmount">סכום צבירה קיים</label>
-                <input type="text" id="zvira" placeholder="הקלד סכום צבירה" onchange="chng()" ><br><br>
+                <input type="text" id="zvira" placeholder="הקלד סכום צבירה" onchange="chng()" >
             </div>
             <div class="form-group">
                 <label  class="lbl" for="loanAmount">סכום הלוואה קיים</label>
-                <input type="text" id="loanAmount" placeholder="הקלד סכום הלוואה"  onchange="chng()"><br><br>
+                <input type="text" id="loanAmount" placeholder="הקלד סכום הלוואה"  onchange="chng()">
             </div>
             <div class="form-group">
                 <label class="lbl" for="illiquidBalance">יתרה לא נזילה</label>
-                <input type="text" id="illiquidBalance" placeholder="הקלד יתרה לא נזילה"  onchange="chng()"><br><br>
+                <input type="text" id="illiquidBalance" placeholder="הקלד יתרה לא נזילה"  onchange="chng()">
             </div>
             <div class="form-group">
                 <label class="lbl" for="liquidBalanceStock">יתרה נזילה מנייתית</label>
-                <input type="text" id="liquidBalanceStock" placeholder="הקלד יתרה נזילה מנייתית"  onchange="chng()"><br><br>
+                <input type="text" id="liquidBalanceStock" placeholder="הקלד יתרה נזילה מנייתית"  onchange="chng()">
             </div>
             <div class="form-group">
                 <label class="lbl" for="liquidBalanceNonStock">יתרה נזילה לא מנייתית</label>
-                <input type="text" id="liquidBalanceNonStock" placeholder="הקלד יתרה נזילה לא מנייתית" onchange="chng()"><br><br>
+                <input type="text" id="liquidBalanceNonStock" placeholder="הקלד יתרה נזילה לא מנייתית" onchange="chng()">
             </div>
             <div class="form-group">
                 <label class="lbl" for="requiredWithdrawalAmount">סכום משיכה נדרש</label>
-                <input type="text" id="requiredWithdrawalAmount" placeholder="הקלד סכום משיכה נדרש"  onchange="chng()"><br><br>
+                <input type="text" id="requiredWithdrawalAmount" placeholder="הקלד סכום משיכה נדרש"  onchange="chng()">
             </div>
 
             <div class="buttons">
@@ -46,8 +47,8 @@
             <h2 id="tozaa" >תוצאה:</h2>
             <table border="1" style="border-collapse: collapse;">
                 <tr>
-                    <th style="text-align: center; padding: 10px;">תוצאה</th>
-                    <th style="text-align: center; padding: 10px;">ערך</th>
+                    <th class="kotkot" style="text-align: center; padding: 10px;">תוצאה</th>
+                    <th class="kotkot" style="text-align: center; padding: 10px;">ערך</th>
                 </tr>
                 <tr>
                     <td style="text-align: right; padding: 10px;">סכום מקסימום לתשלום</td>

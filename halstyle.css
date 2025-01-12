@@ -71,7 +71,7 @@ button{
     margin: 0%;
     box-sizing: border-box;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     #loanForm {
         width: 80vw;
     }

@@ -124,6 +124,14 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // הוספת מאזין לאירוע שליחת הטופס
     form.addEventListener("submit", function(event) {
+        document.getElementById("loanAmount").value;
+        const yitratLoNazil = parseFloat(document.getElementById("illiquidBalance").value;
+        const yitraNazilLOMenayot = parseFloat(document.getElementById("liquidBalanceNonStock").value;
+        const yitraNazilMenayot = parseFloat(document.getElementById("liquidBalanceStock").value;
+        const requestedAmount = parseFloat(document.getElementById("requiredWithdrawalAmount").value;
+        if(yitratHalvaa==='' || yitratLoNazil==='' || yitraNazilLOMenayot===''|| yitraNazilMenayot===''|| requestedAmount===''){
+       alert('נדרש למלא נתונים - שדה ריק למלא ב 0');return;
+        }   
         event.preventDefault(); // מונע שליחה של הטופס (ללא חישוב)
         calculateWithdrawalAmount(); // חישוב סכום למשיכה ללא פרעון הלוואות
     });

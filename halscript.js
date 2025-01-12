@@ -127,4 +127,17 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault(); // מונע שליחה של הטופס (ללא חישוב)
         calculateWithdrawalAmount(); // חישוב סכום למשיכה ללא פרעון הלוואות
     });
+
+
+    function change(){
+     document.getElementById("maxPaymentAmountResult").textContent ="";
+    document.getElementById("withdrawalAmountResult").textContent ="";
+    document.getElementById("withdrawalneto").textContent = "";
+    document.getElementById("schomLeMeshihaBafoal").textContent = "";
+    document.getElementById("nimshachMenayati").textContent ="";
+    document.getElementById("nimshachLoMenayati").textContent = "";
+    document.getElementById("schomLePeron").textContent = "";
+        
+    }
+    
 });

@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // הוספת מאזין לאירוע שליחת הטופס
     function calc() {
-        document.getElementById("loanAmount").value;
+        const yitratHalvaa = document.getElementById("loanAmount").value;
         const yitratLoNazil = parseFloat(document.getElementById("illiquidBalance").value;
         const yitraNazilLOMenayot = parseFloat(document.getElementById("liquidBalanceNonStock").value;
         const yitraNazilMenayot = parseFloat(document.getElementById("liquidBalanceStock").value;

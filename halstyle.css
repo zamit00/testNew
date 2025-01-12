@@ -60,9 +60,6 @@ input[type="text"] {
   
 }
 
-button:hover {
-    background-color: #45a049;
-}
 
 table {
     border: 1px solid #ddd;

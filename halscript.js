@@ -6,6 +6,7 @@ function calculateWithdrawalAmount() {
     
     
     // קריאה לערכים מהקלט של המשתמש
+    const zvira = parseFloat(document.getElementById("zvira").value.replace(/[^0-9.]/g, ""));
     const yitratHalvaa = parseFloat(document.getElementById("loanAmount").value.replace(/[^0-9.]/g, ""));
     const yitratLoNazil = parseFloat(document.getElementById("illiquidBalance").value.replace(/[^0-9.]/g, ""));
     const yitraNazilLOMenayot = parseFloat(document.getElementById("liquidBalanceNonStock").value.replace(/[^0-9.]/g, ""));
@@ -15,6 +16,9 @@ function calculateWithdrawalAmount() {
     if(!yitratHalvaa || !yitratLoNazil|| !yitraNazilLOMenayot|| !yitraNazilMenayot|| !requestedAmount){
        alert('נדרש למלא נתונים - שדה ריק למלא ב 0');return;
         } 
+     if(zvira!==yitratLoNazil+yitraNazilLOMenayot+yitraNazilMenayot){
+        alert('סכום יתרה אינו תואם לפירוט');return; 
+     }   
     // חישוב maxLeHalvaa
     const maxLeHalvaa = (yitratLoNazil * shiurLoNazil) + (yitraNazilMenayot * shiurNazilM) + (yitraNazilLOMenayot * shiurNazilLm);
 
@@ -116,7 +120,6 @@ if (requestedAmount < amountForWithdrawalNoLoanRepayment) {
     }
 }
 schomlemeshich=nimshachMenayati+nimshachLoMenayati;
-console.log(schomLeMeshihaBafoal+":"+nimshachMenayati+":"+nimshachLoMenayati+":"+schomLePeron);
 document.getElementById("schomLeMeshihaBafoal").textContent = schomlemeshich.toLocaleString("he-IL");
 document.getElementById("nimshachMenayati").textContent = nimshachMenayati.toLocaleString("he-IL");
 document.getElementById("nimshachLoMenayati").textContent = nimshachLoMenayati.toLocaleString("he-IL");
@@ -124,15 +127,14 @@ document.getElementById("schomLePeron").textContent = schomLePeron.toLocaleStrin
 document.getElementById("tozaa").scrollIntoView({ behavior: "smooth" });
 }
 
-function change(){
+function chng(){
     document.getElementById("maxPaymentAmountResult").textContent ="";
     document.getElementById("withdrawalAmountResult").textContent ="";
     document.getElementById("withdrawalneto").textContent = "";
     document.getElementById("schomLeMeshihaBafoal").textContent = "";
     document.getElementById("nimshachMenayati").textContent ="";
     document.getElementById("nimshachLoMenayati").textContent = "";
-    document.getElementById("schomLePeron").textContent = "";
-        
+    document.getElementById("schomLePeron").textContent = "";       
 }
     
 

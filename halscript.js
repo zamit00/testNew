@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("loanForm");
     
     // הוספת מאזין לאירוע שליחת הטופס
-    form.addEventListener("submit", function(event) {
+    function calc() {
         document.getElementById("loanAmount").value;
         const yitratLoNazil = parseFloat(document.getElementById("illiquidBalance").value;
         const yitraNazilLOMenayot = parseFloat(document.getElementById("liquidBalanceNonStock").value;
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }   
         event.preventDefault(); // מונע שליחה של הטופס (ללא חישוב)
         calculateWithdrawalAmount(); // חישוב סכום למשיכה ללא פרעון הלוואות
-    });
+    };
 
 
     function change(){
